@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(function () {
+            $(".sub, .sub_bg").hide();
+            $(".main > li, sub_bg").hover(function () {
+                $(".sub, .sub_bg").stop().slideDown();
+            }, function () {
+                $(".sub, .sub_bg").stop().slideUp();
+            }) //
+
+            var n = 0;
+            setInterval(function () {
+                if (n == 2) {
+                    n = 0;
+                } else {
+                    n++;
+                }
+                console.log(n);
+                pos = n * (-1200) + "px"
+                $(".left_move").animate({
+                    left: pos
+                }, 500)
+            }, 3000);
+
+            $(".qwe").click(function(){
+                $(".modal, .pop").show();
+            })
+            $(".close").click(function(){
+                $(".modal, .pop").hide();
+            })
+
+        }) //
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header id="header">
+            <h1 class="logo"><a href="#"><img src="images/logo.gif" alt="logo"></a></h1>
+            <nav class="nav">
+                <ul class="main">
+                    <li>
+                        <a href="#">재단소개</a>
+                        <ul class="sub">
+                            <li><a href="#">설립취지</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">찾아오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">후원하기</a>
+                        <ul class="sub">
+                            <li><a href="#">국내후원</a></li>
+                            <li><a href="#">국외후원</a></li>
+                            <li><a href="#">맞춤후원</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">자료실</a>
+                        <ul class="sub">
+                            <li><a href="#">서식자료실</a></li>
+                            <li><a href="#">사진자료실</a></li>
+                            <li><a href="#">후원양식</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">스토리</a>
+                        <ul class="sub">
+                            <li><a href="#">웹진</a></li>
+                            <li><a href="#">보고서</a></li>
+                            <li><a href="#">나의 후원</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="sub_bg"></div>
+
+        <section id="section">
+            <div class="slide_img">
+                <ul class="left_move">
+                    <li><a href="#"><img src="images/main-1.jpg" alt="main-1"></a></li>
+                    <li><a href="#"><img src="images/main-2.jpg" alt="main-2"></a></li>
+                    <li><a href="#"><img src="images/main-3.jpg" alt="main-3"></a></li>
+                </ul>
+            </div>
+            <div class="contents">
+                <div class="notice">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li>
+                            <a href="#" class="qwe">2019 '교실에서 찾은 희망' 캠페인 참여 안내(팝업레이어)</a>
+                            <span>2019/03/22</span>
+                        </li>
+                        <li>
+                            <a href="#">말라위 홍수 안내</a>
+                            <span>2019/03/16</span>
+                        </li>
+                        <li>
+                            <a href="#">'시리아 내전 발생 8주년' 기념행사 진행</a>
+                            <span>2019/03/02</span>
+                        </li>
+                        <li>
+                            <a href="#">공연 수익 전액 후원하는 특별한 공연</a>
+                            <span>2019/02/27</span>
+                        </li>
+                        <li>
+                            <a href="#">2019 LG디스플레이클럽 꿈 발표회 성료</a>
+                            <span>2019/02/20</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gallery">
+                    <h3>gallery</h3>
+                    <ul>
+                        <li><a href="#"><img src="images/thumb1.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="images/thumb2.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="images/thumb3.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="banner">
+                    <h3>배너</h3>
+                    <p><a href="#"><img src="images/banner.jpg" alt=""></a></p>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <div class="f_logo"><img src="images/logoBtm.gif" alt=""></div>
+            <div class="copy">copyright © GREEN복지재단. All rights reserved.</div>
+            <div class="family">
+                <select name="" id="">
+                    <option value="v1">RED 복지재단</option>
+                    <option value="v1">GREEN 복지재단</option>
+                    <option value="v1">BLUE 복지재단</option>
+                    <option value="v1">YELLOW 복지재단</option>
+                </select>
+            </div>
+
+
+
+        </footer>
+
+    </div>
+
+    <div class="modal"></div>
+
+    <div class="pop">
+        <h3>title</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam a veritatis iste enim consequatur sit et
+            blanditiis doloribus sunt quisquam dolores veniam, omnis commodi architecto praesentium, at vel
+            necessitatibus! Illo!
+        </p>
+        <button class="close">CLOSE X</button>
+    </div>
+</body>
+
+</html>
